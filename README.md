@@ -28,8 +28,12 @@ You'll end up repeating the second step pretty frequently. You can clean out the
 ```
 ./gradlew clean
 ./gradlew xnatDataBuilder xnatPluginJar
+./gradlew jar
 ```
-
+```
+./gradlew clean
+./gradlew jar
+```
 You can also combine these into a single command:
 
 ```
