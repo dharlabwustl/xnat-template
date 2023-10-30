@@ -21,7 +21,7 @@ import java.util.Date;
 @SuppressWarnings("unused")
 public class Template1Screen extends SecureScreen {
     @Override
-    protected void doBuildTemplate1(final RunData data, final Context context) {
+    protected void doBuildTemplate(final RunData data, final Context context) {
         context.put("dateTime", DATE_FORMAT.format(new Date()));
     }
 
