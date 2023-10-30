@@ -1,4 +1,4 @@
-package org.nrg.xnat.plugins.template.dcm;
+package org.nrg.xnat.plugins.template1.dcm;
 
 import org.dcm4che2.data.Tag;
 import org.nrg.dcm.ChainExtractor;

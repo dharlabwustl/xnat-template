@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  ~ xnat-template-plugin: template.xsd
+  ~ xnat-template1-plugin: template1.xsd
   ~ XNAT https://www.xnat.org
   ~ Copyright (c) 2005-2021, Washington University School of Medicine
   ~ All Rights Reserved
@@ -12,16 +12,16 @@
 	TODO: You can use this as the basis for an XNAT data-type definition or simply delete it. Note that there are other
 	files related to the data type defined here:
 
-	 - src/main/java/org/apache/turbine/app/xnat/modules/screens/XDATScreen_edit_template_sample.java
-	 - src/main/java/org/apache/turbine/app/xnat/modules/screens/XDATScreen_report_template_sample.java
-	 - src/main/resources/META-INF/resources/templates/screens/XDATScreen_edit_template_sample.vm
-	 - src/main/resources/META-INF/resources/templates/screens/XDATScreen_report_template_sample.vm
-	 - src/main/resources/META-INF/resources/templates/screens/xnat_subjectData/actionsBox/sample.vm
+	 - src/main/java/org/apache/turbine/app/xnat/modules/screens/XDATScreen_edit_template1_sample.java
+	 - src/main/java/org/apache/turbine/app/xnat/modules/screens/XDATScreen_report_template1_sample.java
+	 - src/main/resources/META-INF/resources/template1s/screens/XDATScreen_edit_template1_sample.vm
+	 - src/main/resources/META-INF/resources/template1s/screens/XDATScreen_report_template1_sample.vm
+	 - src/main/resources/META-INF/resources/template1s/screens/xnat_subjectData/actionsBox/sample.vm
 -->
-<xs:schema targetNamespace="http://nrg.wustl.edu/template" xmlns:template="http://nrg.wustl.edu/template" xmlns:xnat="http://nrg.wustl.edu/xnat"
+<xs:schema targetNamespace="http://nrg.wustl.edu/template1" xmlns:template1="http://nrg.wustl.edu/template1" xmlns:xnat="http://nrg.wustl.edu/xnat"
 		   xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:import namespace="http://nrg.wustl.edu/xnat" schemaLocation="../xnat/xnat.xsd"/>
-	<xs:element name="sample" type="template:sample"/>
+	<xs:element name="sample" type="template1:sample"/>
 
 	<xs:complexType name="sample">
 		<xs:annotation>

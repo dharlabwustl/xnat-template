@@ -1,4 +1,4 @@
-package org.nrg.xnat.plugins.template.dcm;
+package org.nrg.xnat.plugins.template1.dcm;
 
 import java.util.*;
 import java.util.stream.Collectors;

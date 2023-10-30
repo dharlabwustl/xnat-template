@@ -1,4 +1,4 @@
-package org.nrg.xnat.plugins.template.dcm;
+package org.nrg.xnat.plugins.template1.dcm;
 
 import org.apache.commons.lang3.StringUtils;
 import org.dcm4che2.data.DicomObject;

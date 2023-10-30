@@ -1,5 +1,5 @@
 #*																			*#
-#* xnat-template-plugin: XDATScreen_report_template_sample.vm					*#
+#* xnat-template1-plugin: XDATScreen_report_template1_sample.vm					*#
 #* XNAT https://www.xnat.org												*#
 #* Copyright (c) 2005-2021, Washington University School of Medicine       	*#
 #* All Rights Reserved														*#
@@ -9,14 +9,14 @@
 #* @vtlvariable name="data" type="org.apache.turbine.util.RunData" *#
 #* @vtlvariable name="element" type="java.lang.String" *#
 #* @vtlvariable name="item" type="org.nrg.xft.XFTItem" *#
-#* @vtlvariable name="om" type="org.nrg.xdat.om.TemplateSample" *#
-#* @vtlvariable name="page" type="org.apache.turbine.util.template.HtmlPageAttributes" *#
+#* @vtlvariable name="om" type="org.nrg.xdat.om.Template1Sample" *#
+#* @vtlvariable name="page" type="org.apache.turbine.util.template1.HtmlPageAttributes" *#
 #* @vtlvariable name="project" type="java.lang.String" *#
 #* @vtlvariable name="search_field" type="java.lang.String" *#
 #* @vtlvariable name="search_value" type="java.lang.String" *#
 #* @vtlvariable name="turbineUtils" type="org.nrg.xdat.turbine.utils.TurbineUtils" *#
 #* @vtlvariable name="ui" type="org.apache.turbine.services.pull.util.UIManager" *#
-<!-- BEGIN META-INF/resources/templates/screens/XDATScreen_edit_template_sample.vm -->
+<!-- BEGIN META-INF/resources/template1s/screens/XDATScreen_edit_template1_sample.vm -->
 $page.setTitle("Sample")
 $page.setLinkColor($ui.alink)
 $page.setVlinkColor($ui.vlink)
@@ -41,7 +41,7 @@ $page.setVlinkColor($ui.vlink)
 <table width="100%">
 	<tr>
 		<td>
-			#parse($turbineUtils.getTemplateName("_report", $om.xSIType, $project))
+			#parse($turbineUtils.getTemplate1Name("_report", $om.xSIType, $project))
 		</td>
 		<td valign="top" align="right">
 			#elementActionsBox($element $search_field $search_value $data.session.getAttribute("user") $item)
@@ -59,7 +59,7 @@ $page.setVlinkColor($ui.vlink)
                     <td>&nbsp;</td>
                     #formLabel("Consented?")
                     <td valign="top">
-                        #showBoolean("template:sample/consented" $item)
+                        #showBoolean("template1:sample/consented" $item)
                     </td>
                 </tr>
                 <tr>
@@ -71,4 +71,4 @@ $page.setVlinkColor($ui.vlink)
 		</td>
 	</tr>
 </table>
-<!-- END META-INF/resources/templates/screens/XDATScreen_edit_template_sample.vm -->
+<!-- END META-INF/resources/template1s/screens/XDATScreen_edit_template1_sample.vm -->

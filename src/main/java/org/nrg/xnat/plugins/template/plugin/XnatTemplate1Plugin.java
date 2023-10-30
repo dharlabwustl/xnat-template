@@ -1,5 +1,5 @@
 /*
- * xnat-template-plugin: org.nrg.xnat.plugins.template.plugin.XnatTemplatePlugin
+ * xnat-template1-plugin: org.nrg.xnat.plugins.template1.plugin.XnatTemplate1Plugin
  * XNAT https://www.xnat.org
  * Copyright (c) 2005-2021, Washington University School of Medicine
  * All Rights Reserved
@@ -7,41 +7,41 @@
  * Released under the Simplified BSD.
  */
 
-package org.nrg.xnat.plugins.template.plugin;
+package org.nrg.xnat.plugins.template1.plugin;
 
 import lombok.extern.slf4j.Slf4j;
 import org.dcm4che2.data.Tag;
 import org.nrg.config.services.ConfigService;
 import org.nrg.framework.annotations.XnatDataModel;
 import org.nrg.framework.annotations.XnatPlugin;
-import org.nrg.xdat.bean.TemplateSampleBean;
+import org.nrg.xdat.bean.Template1SampleBean;
 import org.nrg.xdat.security.user.XnatUserProvider;
-import org.nrg.xnat.plugins.template.dcm.ConfigurableMappedAttributeExtractor;
-import org.nrg.xnat.plugins.template.dcm.ConfigurableMappedDicomObjectIdentifier;
-import org.nrg.xnat.plugins.template.dcm.ConfigurableMappedNumberExtractor;
-import org.nrg.xnat.plugins.template.dcm.ConfigurableMappedProjectIdentifier;
+import org.nrg.xnat.plugins.template1.dcm.ConfigurableMappedAttributeExtractor;
+import org.nrg.xnat.plugins.template1.dcm.ConfigurableMappedDicomObjectIdentifier;
+import org.nrg.xnat.plugins.template1.dcm.ConfigurableMappedNumberExtractor;
+import org.nrg.xnat.plugins.template1.dcm.ConfigurableMappedProjectIdentifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
-@XnatPlugin(value = "templatePlugin", name = "XNAT Template Plugin",
-            entityPackages = "org.nrg.xnat.plugins.template.entities",
-            dataModels = {@XnatDataModel(value = TemplateSampleBean.SCHEMA_ELEMENT_NAME,
-                                         singular = "Template",
-                                         plural = "Templates",
+@XnatPlugin(value = "template1Plugin", name = "XNAT Template1 Plugin",
+            entityPackages = "org.nrg.xnat.plugins.template1.entities",
+            dataModels = {@XnatDataModel(value = Template1SampleBean.SCHEMA_ELEMENT_NAME,
+                                         singular = "Template1",
+                                         plural = "Template1s",
                                          code = "TM")})
-@ComponentScan({"org.nrg.xnat.plugins.template.preferences",
-                "org.nrg.xnat.plugins.template.repositories",
-                "org.nrg.xnat.plugins.template.rest",
-                "org.nrg.xnat.plugins.template.services.impl"})
+@ComponentScan({"org.nrg.xnat.plugins.template1.preferences",
+                "org.nrg.xnat.plugins.template1.repositories",
+                "org.nrg.xnat.plugins.template1.rest",
+                "org.nrg.xnat.plugins.template1.services.impl"})
 @Slf4j
-public class XnatTemplatePlugin {
-    public XnatTemplatePlugin() {
-        log.info("Creating the XnatTemplatePlugin configuration class");
+public class XnatTemplate1Plugin {
+    public XnatTemplate1Plugin() {
+        log.info("Creating the XnatTemplate1Plugin configuration class");
     }
 
     @Bean
-    public String templatePluginMessage() {
-        return "This comes from deep within the template plugin.";
+    public String template1PluginMessage() {
+        return "This comes from deep within the template1 plugin.";
     }
 
     /**

@@ -1,5 +1,5 @@
 /*
- * xnat-template-plugin: org.apache.turbine.app.xnat.modules.screens.TemplateScreen
+ * xnat-template-plugin: org.apache.turbine.app.xnat.modules.screens.Template1Screen
  * XNAT https://www.xnat.org
  * Copyright (c) 2005-2021, Washington University School of Medicine
  * All Rights Reserved
@@ -19,9 +19,9 @@ import java.util.Date;
 
 @Slf4j
 @SuppressWarnings("unused")
-public class TemplateScreen extends SecureScreen {
+public class Template1Screen extends SecureScreen {
     @Override
-    protected void doBuildTemplate(final RunData data, final Context context) {
+    protected void doBuildTemplate1(final RunData data, final Context context) {
         context.put("dateTime", DATE_FORMAT.format(new Date()));
     }
 

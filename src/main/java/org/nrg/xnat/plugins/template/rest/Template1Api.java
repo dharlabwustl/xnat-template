@@ -1,5 +1,5 @@
 /*
- * xnat-template-plugin: org.nrg.xnat.plugins.template.rest.TemplateApi
+ * xnat-template1-plugin: org.nrg.xnat.plugins.template1.rest.Template1Api
  * XNAT https://www.xnat.org
  * Copyright (c) 2005-2021, Washington University School of Medicine
  * All Rights Reserved
@@ -7,7 +7,7 @@
  * Released under the Simplified BSD.
  */
 
-package org.nrg.xnat.plugins.template.rest;
+package org.nrg.xnat.plugins.template1.rest;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,8 +20,8 @@ import org.nrg.xapi.rest.AbstractXapiRestController;
 import org.nrg.xapi.rest.XapiRequestMapping;
 import org.nrg.xdat.security.services.RoleHolder;
 import org.nrg.xdat.security.services.UserManagementServiceI;
-import org.nrg.xnat.plugins.template.entities.Template;
-import org.nrg.xnat.plugins.template.services.TemplateService;
+import org.nrg.xnat.plugins.template1.entities.Template1;
+import org.nrg.xnat.plugins.template1.services.Template1Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,78 +31,78 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@Api("Template API")
+@Api("Template1 API")
 @XapiRestController
-@RequestMapping(value = "/template/entities")
+@RequestMapping(value = "/template1/entities")
 @Slf4j
-public class TemplateApi extends AbstractXapiRestController {
+public class Template1Api extends AbstractXapiRestController {
     @Autowired
-    protected TemplateApi(final UserManagementServiceI userManagementService, final RoleHolder roleHolder, final TemplateService templateService) {
+    protected Template1Api(final UserManagementServiceI userManagementService, final RoleHolder roleHolder, final Template1Service template1Service) {
         super(userManagementService, roleHolder);
-        _templateService = templateService;
+        _template1Service = template1Service;
     }
 
-    @ApiOperation(value = "Returns a list of all templates.", response = Template.class, responseContainer = "List")
-    @ApiResponses({@ApiResponse(code = 200, message = "Templates successfully retrieved."),
+    @ApiOperation(value = "Returns a list of all template1s.", response = Template1.class, responseContainer = "List")
+    @ApiResponses({@ApiResponse(code = 200, message = "Template1s successfully retrieved."),
                    @ApiResponse(code = 401, message = "Must be authenticated to access the XNAT REST API."),
                    @ApiResponse(code = 500, message = "Unexpected error")})
     @XapiRequestMapping(produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
-    public List<Template> getEntities() {
-        return _templateService.getAll();
+    public List<Template1> getEntities() {
+        return _template1Service.getAll();
     }
 
-    @ApiOperation(value = "Creates a new template.", response = Template.class)
-    @ApiResponses({@ApiResponse(code = 200, message = "Template successfully created."),
+    @ApiOperation(value = "Creates a new template1.", response = Template1.class)
+    @ApiResponses({@ApiResponse(code = 200, message = "Template1 successfully created."),
                    @ApiResponse(code = 401, message = "Must be authenticated to access the XNAT REST API."),
                    @ApiResponse(code = 500, message = "Unexpected error")})
     @XapiRequestMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
-    public Template createEntity(@RequestBody final Template entity) {
-        return _templateService.create(entity);
+    public Template1 createEntity(@RequestBody final Template1 entity) {
+        return _template1Service.create(entity);
     }
 
-    @ApiOperation(value = "Retrieves the indicated template.",
-                  notes = "Based on the template ID, not the primary key ID.",
-                  response = Template.class)
-    @ApiResponses({@ApiResponse(code = 200, message = "Template successfully retrieved."),
+    @ApiOperation(value = "Retrieves the indicated template1.",
+                  notes = "Based on the template1 ID, not the primary key ID.",
+                  response = Template1.class)
+    @ApiResponses({@ApiResponse(code = 200, message = "Template1 successfully retrieved."),
                    @ApiResponse(code = 401, message = "Must be authenticated to access the XNAT REST API."),
                    @ApiResponse(code = 500, message = "Unexpected error")})
     @XapiRequestMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.GET)
-    public Template getEntity(@PathVariable final String id) throws NotFoundException {
-        if (!_templateService.exists("templateId", id)) {
-            throw new NotFoundException("No template with the ID \"" + id + "\" was found.");
+    public Template1 getEntity(@PathVariable final String id) throws NotFoundException {
+        if (!_template1Service.exists("template1Id", id)) {
+            throw new NotFoundException("No template1 with the ID \"" + id + "\" was found.");
         }
-        return _templateService.findByTemplateId(id);
+        return _template1Service.findByTemplate1Id(id);
     }
 
-    @ApiOperation(value = "Updates the indicated template.",
+    @ApiOperation(value = "Updates the indicated template1.",
                   notes = "Based on primary key ID, not subject or record ID.",
                   response = Long.class)
-    @ApiResponses({@ApiResponse(code = 200, message = "Template successfully updated."),
+    @ApiResponses({@ApiResponse(code = 200, message = "Template1 successfully updated."),
                    @ApiResponse(code = 401, message = "Must be authenticated to access the XNAT REST API."),
                    @ApiResponse(code = 500, message = "Unexpected error")})
     @XapiRequestMapping(value = "{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.PUT)
-    public long updateEntity(@PathVariable final Long id, @RequestBody final Template entity) throws NotFoundException {
-        if (!_templateService.exists("templateId", id)) {
-            throw new NotFoundException("No template with the ID \"" + id + "\" was found.");
+    public long updateEntity(@PathVariable final Long id, @RequestBody final Template1 entity) throws NotFoundException {
+        if (!_template1Service.exists("template1Id", id)) {
+            throw new NotFoundException("No template1 with the ID \"" + id + "\" was found.");
         }
-        final Template existing = _templateService.retrieve(id);
-        existing.setTemplateId(entity.getTemplateId());
-        _templateService.update(existing);
+        final Template1 existing = _template1Service.retrieve(id);
+        existing.setTemplate1Id(entity.getTemplate1Id());
+        _template1Service.update(existing);
         return id;
     }
 
-    @ApiOperation(value = "Deletes the indicated template.",
+    @ApiOperation(value = "Deletes the indicated template1.",
                   notes = "Based on primary key ID, not subject or record ID.",
                   response = Long.class)
-    @ApiResponses({@ApiResponse(code = 200, message = "Template successfully deleted."),
+    @ApiResponses({@ApiResponse(code = 200, message = "Template1 successfully deleted."),
                    @ApiResponse(code = 401, message = "Must be authenticated to access the XNAT REST API."),
                    @ApiResponse(code = 500, message = "Unexpected error")})
     @XapiRequestMapping(value = "{id}", produces = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.DELETE)
     public long deleteEntity(@PathVariable final Long id) {
-        final Template existing = _templateService.retrieve(id);
-        _templateService.delete(existing);
+        final Template1 existing = _template1Service.retrieve(id);
+        _template1Service.delete(existing);
         return id;
     }
 
-    private final TemplateService _templateService;
+    private final Template1Service _template1Service;
 }

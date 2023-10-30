@@ -1,22 +1,22 @@
 siteSettings:
     kind: panel.form
     name: siteSettings
-    label: Template Settings
+    label: Template1 Settings
     method: POST
     contentType: json
-    url: /xapi/template/prefs
+    url: /xapi/template1/prefs
     contents:
-        ${templateNames}
-        ${templateTypes}
+        ${template1Names}
+        ${template1Types}
 
-templateNames:
+template1Names:
     kind: panel.input.text
-    name: templateNames
-    label: Template Names
+    name: template1Names
+    label: Template1 Names
     validation: id-strict max-length:64 onblur
 
-templateTypes:
+template1Types:
     kind: panel.input.text
-    name: templateTypes
-    label: Template Types
+    name: template1Types
+    label: Template1 Types
     validation: id-strict max-length:64 onblur

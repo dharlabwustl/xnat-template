@@ -1,5 +1,5 @@
 #*																			*#
-#* xnat-template-plugin: TemplateScreen.xsd									*#
+#* xnat-template1-plugin: Template1Screen.xsd									*#
 #* XNAT https://www.xnat.org												*#
 #* Copyright (c) 2005-2021, Washington University School of Medicine       	*#
 #* All Rights Reserved														*#
@@ -7,10 +7,10 @@
 #* Released under the Simplified BSD.										*#
 #*																			*#
 #* @vtlvariable name="dateTime" type="java.lang.String" *#
-#* @vtlvariable name="page" type="org.apache.turbine.util.template.HtmlPageAttributes" *#
+#* @vtlvariable name="page" type="org.apache.turbine.util.template1.HtmlPageAttributes" *#
 #* @vtlvariable name="ui" type="org.apache.turbine.services.pull.util.UIManager" *#
-<!-- BEGIN META-INF/resources/templates/screens/TemplateScreen.vm -->
-$page.setTitle("Template Screen")
+<!-- BEGIN META-INF/resources/template1s/screens/Template1Screen.vm -->
+$page.setTitle("Template1 Screen")
 $page.setLinkColor($ui.alink)
 $page.setVlinkColor($ui.vlink)
 
@@ -20,16 +20,16 @@ $page.setVlinkColor($ui.vlink)
 			<table>
                 <tr>
                     <td colspan="3" style="padding-top: 20px; padding-bottom: 10px; text-align: left; vertical-align: middle;">
-                        <span style="font-family: $ui.sansSerifFonts; font-size: small; "><b>Template Screen</b></span>
+                        <span style="font-family: $ui.sansSerifFonts; font-size: small; "><b>Template1 Screen</b></span>
                     </td>
                 </tr>
                 <tr>
 					<td valign="top">
-						This is a page from the template plugin that was requested at $dateTime.
+						This is a page from the template1 plugin that was requested at $dateTime.
 					</td>
 				</tr>
 			</table>
 		</td>
 	</tr>
 </table>
-<!-- END META-INF/resources/templates/screens/TemplateScreen.vm -->
+<!-- END META-INF/resources/template1s/screens/Template1Screen.vm -->

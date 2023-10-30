@@ -1,5 +1,5 @@
 /*
- * xnat-template-plugin: org.apache.turbine.app.xnat.modules.screens.XDATScreen_edit_template_sample
+ * xnat-template1-plugin: org.apache.turbine.app.xnat.modules.screens.XDATScreen_edit_template1_sample
  * XNAT http://www.xnat.org
  * Copyright (c) 2005-2021, Washington University School of Medicine
  * All Rights Reserved
@@ -12,16 +12,16 @@ package org.apache.turbine.app.xnat.modules.screens;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.turbine.util.RunData;
 import org.apache.velocity.context.Context;
-import org.nrg.xdat.om.TemplateSample;
+import org.nrg.xdat.om.Template1Sample;
 import org.nrg.xft.ItemI;
 import org.nrg.xnat.turbine.modules.screens.EditSubjectAssessorScreen;
 
 @SuppressWarnings("unused")
 @Slf4j
-public class XDATScreen_edit_template_sample extends EditSubjectAssessorScreen {
+public class XDATScreen_edit_template1_sample extends EditSubjectAssessorScreen {
     @Override
     public String getElementName() {
-        return TemplateSample.SCHEMA_ELEMENT_NAME;
+        return Template1Sample.SCHEMA_ELEMENT_NAME;
     }
 
     @Override

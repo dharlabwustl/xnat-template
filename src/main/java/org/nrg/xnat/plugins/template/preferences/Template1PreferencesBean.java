@@ -1,5 +1,5 @@
 /*
- * xnat-template-plugin: org.nrg.xnat.plugins.template.preferences.TemplatePreferencesBean
+ * xnat-template1-plugin: org.nrg.xnat.plugins.template1.preferences.Template1PreferencesBean
  * XNAT https://www.xnat.org
  * Copyright (c) 2005-2021, Washington University School of Medicine
  * All Rights Reserved
@@ -7,7 +7,7 @@
  * Released under the Simplified BSD.
  */
 
-package org.nrg.xnat.plugins.template.preferences;
+package org.nrg.xnat.plugins.template1.preferences;
 
 import lombok.extern.slf4j.Slf4j;
 import org.nrg.framework.configuration.ConfigPaths;
@@ -21,37 +21,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
-@NrgPreferenceBean(toolId = "template", toolName = "XNAT Template Plugin")
+@NrgPreferenceBean(toolId = "template1", toolName = "XNAT Template1 Plugin")
 @Slf4j
-public class TemplatePreferencesBean extends AbstractPreferenceBean {
+public class Template1PreferencesBean extends AbstractPreferenceBean {
     @Autowired
-    public TemplatePreferencesBean(final NrgPreferenceService preferenceService, final ConfigPaths configFolderPaths, final OrderedProperties orderedProperties) {
+    public Template1PreferencesBean(final NrgPreferenceService preferenceService, final ConfigPaths configFolderPaths, final OrderedProperties orderedProperties) {
         super(preferenceService, configFolderPaths, orderedProperties);
     }
 
     @NrgPreference(defaultValue = "['Standard']")
-    public List<String> getTemplateNames() {
-        return getListValue("templateNames");
+    public List<String> getTemplate1Names() {
+        return getListValue("template1Names");
     }
 
     @SuppressWarnings("unused")
-    public void setTemplateNames(final List<String> templateNames) {
+    public void setTemplate1Names(final List<String> template1Names) {
         try {
-            setListValue("templateNames", templateNames);
+            setListValue("template1Names", template1Names);
         } catch (InvalidPreferenceName invalidPreferenceName) {
             //
         }
     }
 
     @NrgPreference(defaultValue = "['standard']")
-    public List<String> getTemplateTypes() {
-        return getListValue("templateTypes");
+    public List<String> getTemplate1Types() {
+        return getListValue("template1Types");
     }
 
     @SuppressWarnings("unused")
-    public void setTemplateTypes(final List<String> templateTypes) {
+    public void setTemplate1Types(final List<String> template1Types) {
         try {
-            setListValue("templateTypes", templateTypes);
+            setListValue("template1Types", template1Types);
         } catch (InvalidPreferenceName invalidPreferenceName) {
             //
         }
