@@ -20,7 +20,7 @@ functions. You should keep and expand the parts you need and remove those you do
 To build the XNAT template plugin:
 
 1. If you haven't already, clone this repository and cd to the newly cloned folder.
-1. Build the plugin: `./gradlew xnatDataBuilder xnatPluginJar` (on Windows, you can use the batch file: `gradlew.bat jar`). This should build the plugin in the file **build/libs/xnat-template-plugin-1.0.0-SNAPSHOT-xpl.jar** (the version may differ based on updates to the code).
+1. Build the plugin: `./gradlew jar ` xnatDataBuilder xnatPluginJar (on Windows, you can use the batch file: `gradlew.bat jar`). This should build the plugin in the file **build/libs/xnat-template-plugin-1.0.0-SNAPSHOT-xpl.jar** (the version may differ based on updates to the code).
 1. Copy the plugin jar to your plugins folder: `cp build/libs/xnat-template-plugin-1.0.0-SNAPSHOT-xpl.jar /data/xnat/home/plugins`
 
 You'll end up repeating the second step pretty frequently. You can clean out the `build` folder with the `clean` task, which can be run on its own or with other tasks. For example, as separate tasks:
