@@ -1,5 +1,5 @@
 /*
- * xnat-template-plugin: build.gradle
+ * xnat-template1-plugin: build.gradle
  * XNAT https://www.xnat.org
  * Copyright (c) 2005-2021, Washington University School of Medicine
  * All Rights Reserved
@@ -33,7 +33,7 @@ plugins {
 //       group might be "edu.miskatonic.imaging.xnat".
 group "org.nrg.xnatx.plugins"
 version "1.0.0-SNAPSHOT"
-description "XNAT Template Plugin for XNAT 1.8"
+description "XNAT Template1 Plugin for XNAT 1.8"
 
 // TODO: This provides access to all of these repositories for dependency resolution.
 repositories {
@@ -210,8 +210,8 @@ jar {
 
 // TODO: This builds the XNAT plugin jar that pulls in the manifest with VCS info from above.
 //       This includes all compiled Java classes (including generated classes), any schema
-//       files, JavaScript and Velocity template resources, and the XNAT plugin identifier
-//       properties file, in this case named META-INF/xnat/templatePlugin-plugin.properties.
+//       files, JavaScript and Velocity template1 resources, and the XNAT plugin identifier
+//       properties file, in this case named META-INF/xnat/template1Plugin-plugin.properties.
 task xnatPluginJar(type: Jar) {
     dependsOn test, sourcesJar, javadocJar
     zip64 true
